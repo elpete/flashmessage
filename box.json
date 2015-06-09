@@ -15,6 +15,7 @@
     "instructions": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
     "changelog": "https://github.com/ericlynnpeterson/flashmessage/commits",
     "type": "modules",
+    "directory": "modules",
     "keywords": [
         "flash",
         "message",
