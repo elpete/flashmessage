@@ -9,7 +9,7 @@
         "url": "https://github.com/ericlynnpeterson/flashmessage"
     },
     "bugs": "https://github.com/ericlynnpeterson/flashmessage/issues",
-    "slug": "flashmessages",
+    "slug": "flashmessage",
     "shortDescription": "Easy, customizable messages across requests for ColdFusion",
     "description": "Easy, customizable messages across requests for ColdFusion",
     "instructions": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
