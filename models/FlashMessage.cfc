@@ -29,7 +29,7 @@ component name="FlashMessage" singleton {
     }
 
     public any function render() {
-        var flashMessages = singleton.flashStorage.get(instance.flashKey);
+        var flashMessages = singleton.flashStorage.get(instance.flashKey, []);
         var flashMessageTemplatePath = instance.messageTemplatePath;
         savecontent variable="messagesHTML" {
             include "#instance.containerTemplatePath#";
