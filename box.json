@@ -1,21 +1,20 @@
 {
-    "name": "flashmessages",
-    "version": "1.0.0",
+    "name": "flashmessage",
+    "version": "1.0.2",
     "author": "Eric Peterson",
-    "location": "https://github.com/ericlynnpeterson/flashmessages",
-    "createPackageDirectory": true,
-    "homepage": "https://github.com/ericlynnpeterson/flashmessages",
-    "documentation": "https://github.com/ericlynnpeterson/flashmessages/blob/master/README.md",
+    "createPackageDirectory": false,
+    "homepage": "https://github.com/ericlynnpeterson/flashmessage",
+    "documentation": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ericlynnpeterson/flashmessages"
+        "url": "https://github.com/ericlynnpeterson/flashmessage"
     },
-    "bugs": "https://github.com/ericlynnpeterson/flashmessages/issues",
+    "bugs": "https://github.com/ericlynnpeterson/flashmessage/issues",
     "slug": "flashmessages",
     "shortDescription": "Easy, customizable messages across requests for ColdFusion",
     "description": "Easy, customizable messages across requests for ColdFusion",
-    "instructions": "https://github.com/ericlynnpeterson/flashmessages/blob/master/README.md",
-    "changelog": "https://github.com/ericlynnpeterson/flashmessages/commits",
+    "instructions": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
+    "changelog": "https://github.com/ericlynnpeterson/flashmessage/commits",
     "type": "modules",
     "keywords": [
         "flash",
