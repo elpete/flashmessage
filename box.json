@@ -16,7 +16,7 @@
     "description": "Easy, customizable messages across requests for ColdFusion",
     "instructions": "https://github.com/ericlynnpeterson/flashmessages/blob/master/README.md",
     "changelog": "https://github.com/ericlynnpeterson/flashmessages/commits",
-    "type": "module",
+    "type": "modules",
     "keywords": [
         "flash",
         "message",
@@ -39,16 +39,6 @@
             "url": "http://opensource.org/licenses/MIT"
         }
     ],
-    "dependencies": {
-        "coldbox": "4.0.0"
-    },
-    "devDependencies": {
-        "testbox": "2.0.0"
-    },
-    "installPaths": {
-        "coldbox": "coldbox",
-        "testbox": "testbox"
-    },
     "ignore": [
         "**/.*",
         "test",
