@@ -2,7 +2,6 @@
     "name": "flashmessage",
     "version": "1.0.2",
     "author": "Eric Peterson",
-    "createPackageDirectory": false,
     "homepage": "https://github.com/ericlynnpeterson/flashmessage",
     "documentation": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
     "repository": {
