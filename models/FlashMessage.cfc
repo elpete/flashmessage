@@ -29,7 +29,7 @@ component name="FlashMessage" singleton {
     }
 
     public any function render() {
-        var flashMessages = singleton.flashStorage.get(instance.flashKey, []);
+        var flashMessages = getMessages();
         var flashMessageTemplatePath = instance.messageTemplatePath;
         savecontent variable="messagesHTML" {
             include "#instance.containerTemplatePath#";
@@ -40,6 +40,22 @@ component name="FlashMessage" singleton {
         return messagesHTML;
     }
 
+    public boolean function messageExists(required string checkMessage, string type = "") {
+        var messages = getMessages();
+        var exists = false;
+        for (var message in messages) {
+            if (message.message == arguments.checkMessage) {
+                if (arguments.type == "" || (arguments.type != "" && arguments.type == message.type)) {
+                    exists = true;
+                }
+            }
+        }
+        return exists;
+    }
+
+    public array function getMessages() {
+        return singleton.flashStorage.get(instance.flashKey, []);
+    }
 
     private void function setMessages(required array messages) {
         singleton.flashStorage.put(
@@ -49,9 +65,11 @@ component name="FlashMessage" singleton {
     }
 
     private void function appendMessage(required struct message) {
-        var currentMessages = singleton.flashStorage.get(instance.flashKey);
+        var currentMessages = getMessages();
         ArrayAppend(currentMessages, arguments.message);
         setMessages(currentMessages);
     }
+
+
 
 }

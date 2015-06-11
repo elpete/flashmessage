@@ -9,12 +9,15 @@ component extends="testbox.system.BaseSpec"{
 			beforeEach(function() {
 				flashStorage = getMockBox().createEmptyMock("tests.resources.empty")
 							       .$(method = "put", callLogging = true)
-							       .$(method = "get", returns = []);
+							       .$(method = "get", returns = [])
+							       .$(method = "exists", returns = false);
 
 				flash = new models.FlashMessage(
-					containerTemplatePath = "",
-					messageTemplatePath = "",
-					flashStorage = flashStorage
+					flashStorage = flashStorage,
+					config = {
+						containerTemplatePath = "",
+						messageTemplatePath = ""
+					}
 				);
 			});
 
@@ -88,12 +91,16 @@ component extends="testbox.system.BaseSpec"{
 
 			beforeEach(function() {
 				flashStorage = getMockBox().createEmptyMock("tests.resources.empty")
-							       .$(method = "put").$(method = "get", returns = []);
+							       .$(method = "put")
+							       .$(method = "get", returns = [])
+							       .$(method = "exists", returns = false);
 
 				flash = new models.FlashMessage(
-					containerTemplatePath = "/views/_templates/FlashMessageContainer.cfm",
-					messageTemplatePath = "/views/_templates/FlashMessage.cfm",
-					flashStorage = flashStorage
+					flashStorage = flashStorage,
+					config = {
+						containerTemplatePath = "/views/_templates/FlashMessageContainer.cfm",
+						messageTemplatePath = "/views/_templates/FlashMessage.cfm"
+					}
 				);
 			});
 
@@ -102,6 +109,49 @@ component extends="testbox.system.BaseSpec"{
 				var htmlString = flash.render();
 				// REReplace(htmlString, '> +<', '> <', 'all')
 				expect(	Trim(REReplace(htmlString, "\s{2,}", " ", "all" ))).toBe('<div class="flash-messages"> <div class="alert alert-default"> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Test message </div> </div>');
+			});
+		
+		});
+
+		describe( "Test Helpers", function() {
+		
+			beforeEach(function() {
+				flashStorage = getMockBox().createEmptyMock("tests.resources.empty")
+							       .$(method = "put")
+							       .$(method = "get", returns = [])
+							       .$(method = "exists", returns = false);
+
+				flash = new models.FlashMessage(
+					flashStorage = flashStorage,
+					config = {
+						containerTemplatePath = "",
+						messageTemplatePath = ""
+					}
+				);
+			});
+
+			it( "can return all of the messages currently in the queue", function(){
+				flash.message("Test message");
+				flash.error("Test error message");
+
+				expect(flash.getMessages()).toBeArray().toHaveLength(2).toBe([
+					{ message = "Test message", type = "default" },
+					{ message = "Test error message", type = "error" }
+				]);
+			});
+
+			it( "can verify a message exists", function() {
+				flash.message("Test message");
+
+				expect(flash.messageExists("Test message")).toBeTrue();
+				expect(flash.messageExists("Another message")).toBeFalse();
+			});
+
+			it( "can verify a message exists with a specfic type", function(){
+				flash.error("Test error message");
+
+				expect(flash.messageExists("Test error message", "error")).toBeTrue();
+				expect(flash.messageExists("Test error message", "warning")).toBeFalse();
 			});
 		
 		});
