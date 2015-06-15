@@ -1,5 +1,4 @@
 {
-    "packageDirectory": "modules/flashmessage",
     "devDependencies":{
         "testbox":"2.0.0"
     },
