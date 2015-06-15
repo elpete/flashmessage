@@ -12,9 +12,10 @@ component extends="testbox.system.BaseSpec"{
 							       .$(method = "get", returns = [])
 							       .$(method = "exists", returns = false);
 
-				flash = new models.FlashMessage(
+				flash = new modules.flashmessage.models.FlashMessage(
 					flashStorage = flashStorage,
 					config = {
+						flashKey = "elpete_flashmessage",
 						containerTemplatePath = "",
 						messageTemplatePath = ""
 					}
@@ -95,11 +96,12 @@ component extends="testbox.system.BaseSpec"{
 							       .$(method = "get", returns = [])
 							       .$(method = "exists", returns = false);
 
-				flash = new models.FlashMessage(
+				flash = new modules.flashmessage.models.FlashMessage(
 					flashStorage = flashStorage,
 					config = {
-						containerTemplatePath = "/views/_templates/FlashMessageContainer.cfm",
-						messageTemplatePath = "/views/_templates/FlashMessage.cfm"
+						flashKey = "elpete_flashmessage",
+						containerTemplatePath = "/modules/flashmessage/views/_templates/FlashMessageContainer.cfm",
+						messageTemplatePath = "/modules/flashmessage/views/_templates/FlashMessage.cfm"
 					}
 				);
 			});
@@ -121,12 +123,20 @@ component extends="testbox.system.BaseSpec"{
 							       .$(method = "get", returns = [])
 							       .$(method = "exists", returns = false);
 
-				flash = new models.FlashMessage(
-					flashStorage = flashStorage,
-					config = {
+				var config = {
+						flashKey = "elpete_flashmessage",
 						containerTemplatePath = "",
 						messageTemplatePath = ""
-					}
+				};
+
+				flash = new modules.flashmessage.models.FlashMessage(
+					flashStorage = flashStorage,
+					config = config
+				);
+
+				testUtils = new modules.flashmessage.models.TestUtils(
+					flashStorage = flashStorage,
+					config = config
 				);
 			});
 
@@ -134,7 +144,7 @@ component extends="testbox.system.BaseSpec"{
 				flash.message("Test message");
 				flash.error("Test error message");
 
-				expect(flash.getMessages()).toBeArray().toHaveLength(2).toBe([
+				expect(testUtils.getMessages()).toBeArray().toHaveLength(2).toBe([
 					{ message = "Test message", type = "default" },
 					{ message = "Test error message", type = "error" }
 				]);
@@ -143,15 +153,15 @@ component extends="testbox.system.BaseSpec"{
 			it( "can verify a message exists", function() {
 				flash.message("Test message");
 
-				expect(flash.messageExists("Test message")).toBeTrue();
-				expect(flash.messageExists("Another message")).toBeFalse();
+				expect(testUtils.messageExists("Test message")).toBeTrue();
+				expect(testUtils.messageExists("Another message")).toBeFalse();
 			});
 
 			it( "can verify a message exists with a specfic type", function(){
 				flash.error("Test error message");
 
-				expect(flash.messageExists("Test error message", "error")).toBeTrue();
-				expect(flash.messageExists("Test error message", "warning")).toBeFalse();
+				expect(testUtils.messageExists("Test error message", "error")).toBeTrue();
+				expect(testUtils.messageExists("Test error message", "warning")).toBeFalse();
 			});
 		
 		});

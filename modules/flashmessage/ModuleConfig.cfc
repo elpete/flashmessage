@@ -42,6 +42,7 @@ component {
 
         // Default template
         configStruct.flashmessage = {
+            flashKey = "elpete_flashmessage",
             containerTemplatePath = "#moduleMapping#/views/_templates/FlashMessageContainer.cfm",
             messageTemplatePath = "#moduleMapping#/views/_templates/FlashMessage.cfm"
         };

@@ -1,45 +1,12 @@
 {
-    "name": "flashmessage",
-    "version": "1.0.2",
-    "author": "Eric Peterson",
-    "homepage": "https://github.com/ericlynnpeterson/flashmessage",
-    "documentation": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ericlynnpeterson/flashmessage"
+    "devDependencies":{
+        "testbox":"2.0.0"
     },
-    "bugs": "https://github.com/ericlynnpeterson/flashmessage/issues",
-    "slug": "flashmessage",
-    "shortDescription": "Easy, customizable messages across requests for ColdFusion",
-    "description": "Easy, customizable messages across requests for ColdFusion",
-    "instructions": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
-    "changelog": "https://github.com/ericlynnpeterson/flashmessage/commits",
-    "type": "modules",
-    "keywords": [
-        "flash",
-        "message",
-        "notification"
-    ],
-    "private": false,
-    "engines": [
-        {
-            "type": "railo",
-            "version": ">=4.1.x"
-        },
-        {
-            "type": "adobe",
-            "version": ">=10.0.0"
-        }
-    ],
-    "license":[
-        {
-            "type": "MIT",
-            "url": "http://opensource.org/licenses/MIT"
-        }
-    ],
-    "ignore": [
-        "**/.*",
-        "test",
-        "tests"
-    ]
+    "installPaths":{
+        "testbox":"testbox",
+        "coldbox":"coldbox"
+    },
+    "dependencies":{
+        "coldbox":"4.1.0+00002"
+    }
 }

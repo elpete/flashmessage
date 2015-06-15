@@ -5,7 +5,7 @@ component name="FlashMessage" singleton {
      * @config.inject coldbox:setting:flashmessage
      */
     public FlashMessage function init(any flashStorage, any config) {
-        instance.flashKey = 'flashmessage';
+        instance.flashKey = arguments.config.flashKey;
 
         singleton.flashStorage = arguments.flashStorage;
         instance.containerTemplatePath = arguments.config.containerTemplatePath;
@@ -38,19 +38,6 @@ component name="FlashMessage" singleton {
         setMessages([]);
 
         return messagesHTML;
-    }
-
-    public boolean function messageExists(required string checkMessage, string type = "") {
-        var messages = getMessages();
-        var exists = false;
-        for (var message in messages) {
-            if (message.message == arguments.checkMessage) {
-                if (arguments.type == "" || (arguments.type != "" && arguments.type == message.type)) {
-                    exists = true;
-                }
-            }
-        }
-        return exists;
     }
 
     public array function getMessages() {
