@@ -41,7 +41,6 @@
         "testbox": "2.0.0"
     },
     "ignore": [
-        "**/.*",
         "test",
         "tests"
     ]
