@@ -12,7 +12,7 @@ component extends="testbox.system.BaseSpec"{
 							       .$(method = "get", returns = [])
 							       .$(method = "exists", returns = false);
 
-				flash = new modules.flashmessage.models.FlashMessage(
+				flash = new models.FlashMessage(
 					flashStorage = flashStorage,
 					config = {
 						flashKey = "elpete_flashmessage",
@@ -96,12 +96,12 @@ component extends="testbox.system.BaseSpec"{
 							       .$(method = "get", returns = [])
 							       .$(method = "exists", returns = false);
 
-				flash = new modules.flashmessage.models.FlashMessage(
+				flash = new models.FlashMessage(
 					flashStorage = flashStorage,
 					config = {
 						flashKey = "elpete_flashmessage",
-						containerTemplatePath = "/modules/flashmessage/views/_templates/FlashMessageContainer.cfm",
-						messageTemplatePath = "/modules/flashmessage/views/_templates/FlashMessage.cfm"
+						containerTemplatePath = "/views/_templates/FlashMessageContainer.cfm",
+						messageTemplatePath = "/views/_templates/FlashMessage.cfm"
 					}
 				);
 			});
@@ -129,12 +129,12 @@ component extends="testbox.system.BaseSpec"{
 						messageTemplatePath = ""
 				};
 
-				flash = new modules.flashmessage.models.FlashMessage(
+				flash = new models.FlashMessage(
 					flashStorage = flashStorage,
 					config = config
 				);
 
-				testUtils = new modules.flashmessage.models.TestUtils(
+				testUtils = new models.TestUtils(
 					flashStorage = flashStorage,
 					config = config
 				);
