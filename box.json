@@ -37,10 +37,8 @@
             "url": "http://opensource.org/licenses/MIT"
         }
     ],
-    "devDependencies": {
-        "testbox": "2.0.0"
-    },
     "ignore": [
+        "**/.*",
         "test",
         "tests"
     ]
