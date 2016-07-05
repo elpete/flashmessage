@@ -47,7 +47,8 @@ component name="FlashMessage" singleton {
     private void function setMessages(required array messages) {
         singleton.flashStorage.put(
             name  = instance.flashKey,
-            value = arguments.messages
+            value = arguments.messages,
+            autoPurge = false
         );
     }
 
