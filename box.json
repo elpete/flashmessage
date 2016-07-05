@@ -1,7 +1,8 @@
 {
     "name": "flashmessage",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "author": "Eric Peterson",
+    "location": "elpete/flashmessage#v1.2.1",
     "homepage": "https://github.com/ericlynnpeterson/flashmessage",
     "documentation": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
     "repository": {
