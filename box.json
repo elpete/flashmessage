@@ -43,9 +43,12 @@
         "tests"
     ],
     "devDependencies":{
-        "testbox":"folder:/Users/eric.peterson/Code/github/elpete/flashmessage/testbox"
+        "testbox":"^2.3.0+00044"
     },
     "installPaths":{
         "testbox":"testbox"
+    },
+    "dependencies":{
+        
     }
 }
