@@ -1,45 +1,51 @@
 {
-    "name": "flashmessage",
-    "version": "1.2.1",
-    "author": "Eric Peterson",
-    "location": "elpete/flashmessage#v1.2.1",
-    "homepage": "https://github.com/ericlynnpeterson/flashmessage",
-    "documentation": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ericlynnpeterson/flashmessage"
+    "name":"flashmessage",
+    "version":"1.2.1",
+    "author":"Eric Peterson",
+    "location":"elpete/flashmessage#v1.2.1",
+    "homepage":"https://github.com/ericlynnpeterson/flashmessage",
+    "documentation":"https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/ericlynnpeterson/flashmessage"
     },
-    "bugs": "https://github.com/ericlynnpeterson/flashmessage/issues",
-    "slug": "flashmessage",
-    "shortDescription": "Easy, customizable messages across requests for ColdFusion",
-    "description": "Easy, customizable messages across requests for ColdFusion",
-    "instructions": "https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
-    "changelog": "https://github.com/ericlynnpeterson/flashmessage/commits",
-    "type": "modules",
-    "keywords": [
+    "bugs":"https://github.com/ericlynnpeterson/flashmessage/issues",
+    "slug":"flashmessage",
+    "shortDescription":"Easy, customizable messages across requests for ColdFusion",
+    "description":"Easy, customizable messages across requests for ColdFusion",
+    "instructions":"https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
+    "changelog":"https://github.com/ericlynnpeterson/flashmessage/commits",
+    "type":"modules",
+    "keywords":[
         "flash",
         "message",
         "notification"
     ],
-    "private": false,
-    "engines": [
+    "private":false,
+    "engines":[
         {
-            "type": "railo",
-            "version": ">=4.1.x"
+            "type":"railo",
+            "version":">=4.1.x"
         },
         {
-            "type": "adobe",
-            "version": ">=10.0.0"
+            "type":"adobe",
+            "version":">=10.0.0"
         }
     ],
     "license":[
         {
-            "type": "MIT",
-            "url": "http://opensource.org/licenses/MIT"
+            "type":"MIT",
+            "url":"http://opensource.org/licenses/MIT"
         }
     ],
-    "ignore": [
+    "ignore":[
         "**/.*",
         "tests"
-    ]
+    ],
+    "devDependencies":{
+        "testbox":"folder:/Users/eric.peterson/Code/github/elpete/flashmessage/testbox"
+    },
+    "installPaths":{
+        "testbox":"testbox"
+    }
 }
