@@ -1,5 +1,7 @@
 # Flash Messages
 
+[![Build Status](https://travis-ci.org/elpete/flashmessage.svg?branch=master)](https://travis-ci.org/elpete/flashmessage)
+
 ## Easy, customizable messages across requests for ColdFusion
 
 ### About
