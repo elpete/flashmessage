@@ -24,8 +24,8 @@ component name="FlashMessage" singleton {
         appendMessage({ message: arguments.text, type = arguments.type });
     }
 
-    public any function onMissingMethod(required string methodName, required struct methodArgs) {
-        message(methodArgs[1], methodName);
+    public any function onMissingMethod(required string missingMethodName, required struct missingMethodArguments) {
+        message(missingMethodArguments[1], missingMethodName);
     }
 
     public any function render() {
