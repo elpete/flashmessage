@@ -1,20 +1,20 @@
 {
     "name":"flashmessage",
-    "version":"1.2.1",
+    "version":"1.2.2",
     "author":"Eric Peterson",
-    "location":"elpete/flashmessage#v1.2.1",
-    "homepage":"https://github.com/ericlynnpeterson/flashmessage",
-    "documentation":"https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
+    "location":"elpete/flashmessage#v1.2.2",
+    "homepage":"https://github.com/elpete/flashmessage",
+    "documentation":"https://github.com/elpete/flashmessage/blob/master/README.md",
     "repository":{
         "type":"git",
-        "url":"https://github.com/ericlynnpeterson/flashmessage"
+        "url":"https://github.com/elpete/flashmessage"
     },
-    "bugs":"https://github.com/ericlynnpeterson/flashmessage/issues",
+    "bugs":"https://github.com/elpete/flashmessage/issues",
     "slug":"flashmessage",
     "shortDescription":"Easy, customizable messages across requests for ColdFusion",
     "description":"Easy, customizable messages across requests for ColdFusion",
-    "instructions":"https://github.com/ericlynnpeterson/flashmessage/blob/master/README.md",
-    "changelog":"https://github.com/ericlynnpeterson/flashmessage/commits",
+    "instructions":"https://github.com/elpete/flashmessage/blob/master/README.md",
+    "changelog":"https://github.com/elpete/flashmessage/commits",
     "type":"modules",
     "keywords":[
         "flash",
@@ -24,8 +24,8 @@
     "private":false,
     "engines":[
         {
-            "type":"railo",
-            "version":">=4.1.x"
+            "type":"luce",
+            "version":">=4.5.x"
         },
         {
             "type":"adobe",
